@@ -5,7 +5,7 @@ const gulp = require('gulp'),
     concat = require('gulp-concat'),
     cssnano = require('gulp-cssnano'),
     prfix = require('gulp-autoprefixer'),
-    // minjs = require('gulp-terser'),
+    minjs = require('gulp-terser'),
     sass = require('gulp-sass')(require('sass'));
 
 
@@ -13,7 +13,7 @@ const gulp = require('gulp'),
 gulp.task('html', () => {
     return gulp.src('./project/html/*.pug')
         .pipe(pug({ pretty: true }))
-        .pipe(gulp.dest('./dist/html'))
+        .pipe(gulp.dest('./dist'))
 })
 
 //css
@@ -25,9 +25,10 @@ gulp.task('css', () => {
         .pipe(gulp.dest('dist/css', { sourcemaps: '.' }));
 })
 
-//js task
+// js task
 // gulp.task('js', () => {
 //     gulp.src('./project/js/*.js')
+//         // .pipe(minjs({}, minjs.minify))
 //         .pipe(gulp.dest('./dist/js'))
 // })
 

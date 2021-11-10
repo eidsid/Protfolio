@@ -1,0 +1,44 @@
+$center:0 auto;
+$sidebar-width:300px;
+$sidebare_bgcolor:#131921;
+$primary-color:yellowgreen;
+$header-bgcolor:rgba($sidebare_bgcolor, 0.6);
+$mobile-width :450px;
+$medi-width :990px;
+$textcolor:white;
+$textcolor-dark: rgba($textcolor, 0.7);
+@mixin flex($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+
+@mixin button {
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+@mixin transation($time) {
+    transition: all ease-in-out $time;
+}
+
+@mixin medi {
+    @media (max-width: $medi-width) {
+        @content
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile-width) {
+        @content
+    }
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(17, 11, 11);
+    border: 5px solid greenyellow;
+    margin-top: 2rem;
+}

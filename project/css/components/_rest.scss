@@ -1,0 +1,36 @@
+html,
+body {
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a {
+    color: white
+}
+
+.content {
+    width: calc( 100% - 300px);
+    margin-left: 300px;
+}
+
+@include medi {
+    .content {
+        width: calc( 100% - 60px);
+        margin-left: 60px;
+    }
+}
+
+body {
+    background-color: $sidebare_bgcolor;
+}
