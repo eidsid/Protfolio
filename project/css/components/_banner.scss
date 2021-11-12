@@ -4,6 +4,11 @@
     @include flex(column, center, center);
     font-size: 1.5rem;
     position: relative;
+    h1,
+    h2,
+    ul>li {
+        @include transation(0.3s);
+    }
     h1 {
         margin-top: -5rem;
         span {
@@ -14,16 +19,14 @@
         margin: 2rem 0 4rem 0;
     }
     ul {
+        @include flex(row, center, center);
+        gap: 1rem;
         li {
-            float: left;
             @include transation(0.3s);
             opacity: 0.8;
             a {
                 color: $primary-color;
                 font-size: 2rem;
-            }
-            &:nth-child(1) {
-                margin-right: 2rem;
             }
             &:hover {
                 transform: scale(1.5);
@@ -39,6 +42,7 @@
         height: 100%;
         top: 0;
         left: 0;
+        animation: 40s linear partsaniminfint;
         p {
             color: rgb(78, 109, 16);
             height: 100px;
@@ -99,6 +103,67 @@
             }
         }
     }
+    .scrollDown {
+        position: absolute;
+        bottom: 0;
+        .shap {
+            display: block;
+            border: 0.2rem solid white;
+            width: 40px;
+            height: 50px;
+            border-radius: 30%;
+            margin: 0.5rem auto;
+            position: relative;
+            cursor: pointer;
+            &:after {
+                content: "";
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                position: absolute;
+                left: 9.5px;
+                top: 0.1rem;
+                background-color: cornsilk;
+                animation: 1.2s linear infinite arrowAnim;
+            }
+        }
+    }
+    .top a {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 1rem;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        @include transation(0.3s);
+        background-color: rgba(88, 87, 87, 0.692);
+        text-align: center;
+        padding-top: 0.4rem;
+        color: yellowgreen;
+        font-size: 30px;
+        display: none;
+        &.active {
+            display: block;
+        }
+        &:hover {
+            transform: scale(1.2);
+            background-color: rgb(92, 131, 7);
+            color: rgb(23, 27, 16);
+            padding-top: 0rem;
+        }
+    }
+}
+
+@keyframes arrowAnim {
+    50% {
+        top: 0.4rem;
+        background-color: rgba(255, 255, 255, 0.719);
+    }
+    100% {
+        top: 1rem;
+        background-color: rgba(255, 255, 255, 0.419);
+    }
 }
 
 @keyframes partsanim {
@@ -108,5 +173,23 @@
     100% {
         opacity: 0.6;
         font-size: 1.2rem;
+    }
+}
+
+@keyframes partsaniminfint {
+    50% {
+        transform: scale(0.8);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width:600px) {
+    .banner {
+        font-size: 0.85rem;
     }
 }

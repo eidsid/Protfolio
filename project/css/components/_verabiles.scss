@@ -34,11 +34,3 @@ $textcolor-dark: rgba($textcolor, 0.7);
         @content
     }
 }
-
-section {
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(17, 11, 11);
-    border: 5px solid greenyellow;
-    margin-top: 2rem;
-}
