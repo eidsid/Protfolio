@@ -143,8 +143,9 @@
         color: yellowgreen;
         font-size: 30px;
         display: none;
+        z-index: 100;
         &.active {
-            display: block;
+            display: block !important;
         }
         &:hover {
             transform: scale(1.2);

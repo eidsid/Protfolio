@@ -1,4 +1,8 @@
 aside {
+    img {
+        width: 100%;
+        height: fit-content;
+    }
     z-index: 9999;
     position: fixed;
     top: 0;
@@ -73,13 +77,13 @@ aside {
         &.mini {
             ul {
                 height: 80%;
-                transform: translateX(78%);
+                margin-left: 77.5%;
                 li {
                     &:nth-child(1) {
                         margin-top: 0% !important;
                     }
                     font-size: 1.45rem;
-                    margin-bottom: 30% !important;
+                    margin-bottom: 100% !important;
                     max-width: fit-content;
                     span {
                         display: none;
@@ -97,13 +101,12 @@ aside {
             margin-bottom: 0;
             li.link {
                 margin-top: 15%;
+                margin-bottom: 30% !important;
             }
         }
         &.mini {
-            ul {
-                li {
-                    margin-bottom: 5% !important;
-                }
+            ul.nav li.link {
+                margin-bottom: 100% !important;
             }
         }
     }

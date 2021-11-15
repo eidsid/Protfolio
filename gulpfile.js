@@ -26,14 +26,14 @@ gulp.task('css', () => {
 })
 
 // js task
-// gulp.task('js', () => {
-//     gulp.src('./project/js/*.js')
-//         // .pipe(minjs({}, minjs.minify))
-//         .pipe(gulp.dest('./dist/js'))
-// })
+gulp.task('js', () => {
+    gulp.src('./project/js/*.js')
+        .pipe(minjs({}, minjs.minify))
+        .pipe(gulp.dest('./dist/js'))
+})
 
 gulp.task('watch', function() {
-    // gulp.watch('./project/js/*.js', gulp.series('js'))
+    gulp.watch('./project/js/*.js', gulp.series('js'))
     gulp.watch('./project/html/**/*.pug', gulp.series('html'))
     gulp.watch('./project/css/**/*.scss', gulp.series('css'))
 });
