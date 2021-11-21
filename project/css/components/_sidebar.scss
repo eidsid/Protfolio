@@ -1,7 +1,8 @@
 aside {
     img {
         width: 100%;
-        height: fit-content;
+        max-width: 40vw;
+        max-height: 25vh;
     }
     z-index: 9999;
     position: fixed;
@@ -49,8 +50,8 @@ aside {
         }
     }
     .copy {
-        position: absolute;
-        bottom: 1rem;
+        position: fixed;
+        bottom: 25px;
     }
 }
 
@@ -75,6 +76,9 @@ aside {
             display: block;
         }
         &.mini {
+            img {
+                margin-left: -1rem;
+            }
             ul {
                 height: 80%;
                 margin-left: 77.5%;
@@ -98,15 +102,16 @@ aside {
     aside {
         height: 100%;
         ul.nav {
+            margin-top: 7vh;
             margin-bottom: 0;
             li.link {
-                margin-top: 15%;
-                margin-bottom: 30% !important;
+                margin-top: 10%;
+                margin-bottom: 20% !important;
             }
         }
         &.mini {
             ul.nav li.link {
-                margin-bottom: 100% !important;
+                margin-bottom: 10vh !important;
             }
         }
     }
