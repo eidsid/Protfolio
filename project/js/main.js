@@ -178,3 +178,6 @@ for (let i = 0; i <= projects_array.length; i++) {
     card_container.innerHTML = project.template(projects_array[i]);
     projects.appendChild(card_container);
 }
+
+
+console.log("git  diff ");
