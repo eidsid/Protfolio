@@ -1,4 +1,6 @@
-const { task } = require('gulp');
+const {
+    task
+} = require('gulp');
 
 const gulp = require('gulp'),
     pug = require('gulp-pug'),
@@ -12,17 +14,25 @@ const gulp = require('gulp'),
 //html task
 gulp.task('html', () => {
     return gulp.src('./project/html/*.pug')
-        .pipe(pug({ pretty: true }))
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest('./dist'))
 })
 
 //css
 gulp.task('css', () => {
-    return gulp.src('./project/css/style.scss', { sourcemaps: true })
+    return gulp.src('./project/css/style.scss', {
+            sourcemaps: true
+        })
         .pipe(prfix('last 2 version'))
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
         .pipe(cssnano())
-        .pipe(gulp.dest('dist/css', { sourcemaps: '.' }));
+        .pipe(gulp.dest('dist/css', {
+            sourcemaps: '.'
+        }));
 })
 
 // js task

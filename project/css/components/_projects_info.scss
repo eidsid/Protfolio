@@ -47,7 +47,7 @@
             font-weight: 900;
             font-size: 120%;
         }
-        .text-content {
+        .text-container {
             position: absolute;
             color: rgb(255, 255, 255);
             top: 15%;
@@ -56,16 +56,6 @@
             height: 70%;
             padding: 1rem;
             background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(26, 25, 25, 0.884), rgba(235, 223, 223, 0.171));
-            ol>li,
-            ol>span {
-                font-size: 150%;
-                list-style-type: decimal;
-                line-height: 2rem;
-            }
-            ol>h1 {
-                text-align: center;
-                margin: 2rem auto;
-            }
             .links {
                 @include flex(row, center, center);
                 a {
@@ -103,13 +93,12 @@
         }
         height: fit-content !important;
         overflow-y: scroll;
-        font-size: .7rem;
         height: 90vh !important;
         padding: 0;
         z-index: 100;
         .content {
             padding-left: 0.7rem !important;
-            .text-content {
+            .text-container {
                 background: none;
                 overflow-x: hidden;
                 position: absolute;
