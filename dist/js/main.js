@@ -1,1 +1,139 @@
-let asid=document.querySelector("aside"),asid_open=asid.querySelector(".open"),aside_close=asid.querySelector(".close"),sections=document.querySelectorAll("section");[asid_open,aside_close].forEach((e=>{e.addEventListener("click",(()=>{menus_stat()}))}));let menus_stat=()=>{[asid,asid_open,aside_close].forEach((e=>{e.classList.toggle("active")})),asid.classList.toggle("mini")};window.addEventListener("scroll",(()=>{let e=document.documentElement.scrollTop;sections.forEach((e=>{let t=e.getBoundingClientRect();if(t.top+500<window.innerHeight&&t.bottom>=0){let t=e.attributes.id.value;e.classList.add("active"),linkStat(t)}})),scrolltop(e)}));let linkStat=e=>{asid.querySelectorAll("li").forEach((e=>{e.classList.remove("active")})),document.querySelector(` .sidebare ul li a[href="#${e}"]`).parentElement.classList.add("active")};document.querySelector(".scrollDown").addEventListener("click",(()=>{document.documentElement.scrollTop=document.querySelector("#home").offsetHeight+35})),scrolltop=e=>{let t=document.querySelector("#about").offsetHeight,c=document.querySelector("#home .top a");e+700>t?c.classList.add("active"):c.classList.remove("active")};class project{static template(e){return`\n        <div class="card"> \n            <div class="card-head">\n                <img src="${e.img_url}" alt="${e.title}">\n                <div class="layer">\n                <a  data-set="${e.data_set}">\n                <p>${e.title} </p></a>\n                </div>\n            </div>\n        </div>`}static project_card_click(e){document.querySelectorAll("#experience .cards div .card ").forEach((t=>{t.addEventListener("click",(c=>{let i=t.querySelector(".card-head a").getAttribute("data-set");const r=e.find((e=>e.data_set===i));this.project_info_data(r),document.querySelector(".projects_info").classList.add("active")}))}))}static project_info_data(e){let t=document.querySelector(".projects_info");t.querySelector(".close").addEventListener("click",(()=>{t.classList.remove("active")}));let c=t.querySelector("img"),i=t.querySelector(".text-container"),r=i.querySelector(".title"),a=i.querySelector(".more-info"),o=i.querySelector(".language"),l=i.querySelector(".links"),s=l.querySelector(".link1"),n=l.querySelector(".link2");const{img_url:d,title:u,more_info:m,language:p,link1:y,link2:S}=e;c.setAttribute("src",`${d}`),r.innerText=u,a.innerText=m,o.innerText=p,s.setAttribute("href",y),n.setAttribute("href",S)}}const api=async()=>{let e=[];const{data:{data:t}}=await axios.get("https://api.jsonbin.io/b/620162014ce71361b8d201a0");e=t;let c=document.querySelector("#experience .cards");e.forEach((e=>{let t=document.createElement("div");t.innerHTML=project.template(e),c.appendChild(t)})),project.project_card_click(e)};api();
+let asid = document.querySelector("aside"),
+  asid_open = asid.querySelector(".open"),
+  aside_close = asid.querySelector(".close");
+let sections = document.querySelectorAll("section");
+
+// side bar
+[asid_open, aside_close].forEach((el) => {
+  el.addEventListener("click", () => {
+    menus_stat();
+  });
+});
+let menus_stat = () => {
+  [asid, asid_open, aside_close].forEach((el) => {
+    el.classList.toggle("active");
+  });
+  asid.classList.toggle("mini");
+};
+
+window.addEventListener("scroll", () => {
+  // get the scroll position
+  let scrollPosition = document.documentElement.scrollTop;
+  // make loop in sections and get the position of it and controll classs
+  sections.forEach((sc) => {
+    let position = sc.getBoundingClientRect();
+    // checking for partial visibility
+    if (position.top + 500 < window.innerHeight && position.bottom >= 0) {
+      // get the id of section add add active class to link
+      let currentId = sc.attributes.id.value;
+      sc.classList.add("active");
+      linkStat(currentId);
+    }
+  });
+  scrolltop(scrollPosition);
+});
+
+let linkStat = (id) => {
+  asid.querySelectorAll("li").forEach((link) => {
+    link.classList.remove("active");
+  });
+  let linkSelector = document.querySelector(
+    ` .sidebare ul li a[href="#${id}"]`
+  );
+  linkSelector.parentElement.classList.add("active");
+};
+
+document.querySelector(".scrollDown").addEventListener("click", () => {
+  document.documentElement.scrollTop =
+    document.querySelector("#home").offsetHeight + 35;
+});
+
+scrolltop = (scrollPosition) => {
+  let section1 = document.querySelector("#about").offsetHeight,
+    scrolltop = document.querySelector("#home .top a");
+  // add stacky for nave bar and
+  if (scrollPosition + 700 > section1) {
+    scrolltop.classList.add("active");
+  } else {
+    scrolltop.classList.remove("active");
+  }
+};
+
+// add projects =>
+
+class project {
+  static template(temp) {
+    let content = `
+        <div class="card"> 
+            <div class="card-head">
+                <img src="${temp.img_url}" alt="${temp.title}">
+                <div class="layer">
+                <a  data-set="${temp.data_set}">
+                <p>${temp.title} </p></a>
+                </div>
+            </div>
+        </div>`;
+    return content;
+  }
+
+  static project_card_click(projects) {
+    let cards = document.querySelectorAll("#experience .cards div .card ");
+    cards.forEach((card) => {
+      card.addEventListener("click", (e) => {
+        let data_set = card
+          .querySelector(".card-head a")
+          .getAttribute("data-set");
+        const el = projects.find((value) => value.data_set === data_set);
+        this.project_info_data(el);
+        document.querySelector(".projects_info").classList.add("active");
+      });
+    });
+  }
+
+  static project_info_data(project_info) {
+    let project_info_container = document.querySelector(".projects_info");
+    let close = project_info_container.querySelector(".close");
+    close.addEventListener("click", () => {
+      project_info_container.classList.remove("active");
+    });
+    let img = project_info_container.querySelector("img");
+
+    let container = project_info_container.querySelector(".text-container");
+    let title_con = container.querySelector(".title");
+    let moreinfo_con = container.querySelector(".more-info");
+    let language_con = container.querySelector(".language");
+
+    let links = container.querySelector(".links");
+    let link1_con = links.querySelector(".link1");
+    let link2_con = links.querySelector(".link2");
+
+    const { img_url, title, more_info, language, link1, link2 } = project_info;
+
+    img.setAttribute("src", `${img_url}`);
+    title_con.innerText = title;
+    moreinfo_con.innerText = more_info;
+    language_con.innerText = language || "HTML CSS JavaScript";
+    link1_con.setAttribute("href", link1);
+    link2_con.setAttribute("href", link2);
+  }
+}
+
+const api = async () => {
+  let projects_array = [];
+
+  const {
+    data: { data },
+  } = await axios.get("https://api.jsonbin.io/b/620162014ce71361b8d201a0/1");
+  projects_array = data;
+  console.log(projects_array);
+  let projects = document.querySelector("#experience .cards");
+  projects_array.forEach((el) => {
+    let card_container = document.createElement("div");
+    card_container.innerHTML = project.template(el);
+    projects.appendChild(card_container);
+  });
+
+  project.project_card_click(projects_array);
+};
+
+api();
