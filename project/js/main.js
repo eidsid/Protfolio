@@ -112,7 +112,7 @@ class project {
     img.setAttribute("src", `${img_url}`);
     title_con.innerText = title;
     moreinfo_con.innerText = more_info;
-    language_con.innerText = language;
+    language_con.innerText = language || "HTML CSS JavaScript";
     link1_con.setAttribute("href", link1);
     link2_con.setAttribute("href", link2);
   }
@@ -123,9 +123,9 @@ const api = async () => {
 
   const {
     data: { data },
-  } = await axios.get("https://api.jsonbin.io/b/620162014ce71361b8d201a0/1");
+  } = await axios.get("https://api.jsonbin.io/b/620162014ce71361b8d201a0/3");
   projects_array = data;
-
+  console.log(projects_array);
   let projects = document.querySelector("#experience .cards");
   projects_array.forEach((el) => {
     let card_container = document.createElement("div");
