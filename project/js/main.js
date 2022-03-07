@@ -123,7 +123,7 @@ const api = async () => {
 
   const {
     data: { data },
-  } = await axios.get("https://api.jsonbin.io/b/620162014ce71361b8d201a0/3");
+  } = await axios.get("https://api.jsonbin.io/b/620162014ce71361b8d201a0/5");
   projects_array = data;
   console.log(projects_array);
   let projects = document.querySelector("#experience .cards");
