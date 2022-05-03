@@ -1,0 +1,64 @@
+{
+    "data": [{
+            "img_url": "./imgs/companyprotifolio.png",
+            "data_set": "companyprotifolio",
+            "title": "business protifolio (React.js) Details",
+            "more_info": "I created this app using React.js, and Firebase for deployment",
+            "language": "React.js , scss",
+            "link1": "https://github.com/eidsid/Company-portfolio",
+            "link2": "https://company-portfolio-d0917.web.app/"
+        },
+        {
+            "img_url": "./imgs/amazon.png",
+            "data_set": "amazon",
+            "title": "amazon-clone (React.js) Details",
+            "more_info": "I created this app using React.js, and Firebase for authentication and database and deployment",
+            "language": "React.js Redux,scss,firebase",
+            "link1": "https://clone-27335.web.app/",
+            "link2": "https://github.com/eidsid/amazon-clone"
+        },
+        {
+            "img_url": "./imgs/cuturl.png",
+            "data_set": "cuturl",
+            "title": "CutURL project Details",
+            "more_info": "I created this site using node.js MongoDB mongoose I used mongoose to connect my app to the database (MongoDB), override method to make delete post in html form ,passport to manage login system,flash to post flash messages,library for random text,dotenv to get my DBlink linke from .env file , EJS template for client-Side view ,path for use my public folder that contains css file and javaScript and images",
+            "language": "ejs template,javaScript,scss",
+            "link1": "https://cuturll.herokuapp.com/",
+            "link2": "https://github.com/eidsid/CutURL"
+        },
+        {
+            "img_url": "./imgs/taskmanager.png",
+            "data_set": "taskmanager",
+            "title": "taskmanager project Details",
+            "more_info": "I created this site using node.js MongoDB mongoose I used mongoose to connect my app to the database MongoDB, override method to create delete post in html form ,dotenv to store my DBlink , EJS template for client-Side view , path for use my public folder that contains css file and javaScript",
+            "language": "ejs,css,javaScript",
+            "link1": "https://github.com/eidsid/taskmanager",
+            "link2": "https://github.com/eidsid/taskmanager"
+        },
+        {
+            "img_url": "./imgs/hotel.png",
+            "data_set": "hotel",
+            "title": "HoTel project Details",
+            "more_info": "i create this web site with Pug-js, CSS3, and some JavaScript, languages:  HTML5  CSS3  JAVASCRIPT,used  Glup-js to  Compile and convert SCSS files into a CSS file and add prefixes to fit the old browsers and reduce their size, Compile, convert Pug-js files into pretty HTML file , Reduce JS file size",
+            "language": "pugJs, scss, javaScript",
+            "link1": "https://eidsid.github.io/Hotel/dist/html",
+            "link2": "https://github.com/eidsid/Hotel"
+        },
+        {
+            "img_url": "./imgs/resturant.jpg",
+            "data_set": "resturant",
+            "title": "Resturant project Details",
+            "more_info": "i create this web site with Pug-js, CSS3,jquery,JavaScript , languages:  HTML5  CSS3  JAVASCRIPT,  used  Glup-js to   Compile and convert SCSS files into a CSS file and add prefixes to fit the old browsers and reduce their size, Compile, convert Pug-js files into pretty HTML file , Reduce JS file size",
+            "link1": "https://eidsid.github.io/Restaurant/dist/html/index.html",
+            "link2": "https://github.com/eidsid/Restaurant"
+        },
+        {
+            "img_url": "./imgs/protifolio.jpg",
+            "data_set": "Protfolio",
+            "title": "Protfolio project Details",
+            "more_info": "this web site also one of my best projects,i create this web site with Pug-js, scss,JavaScript , languages:  HTML5  CSS3  JAVASCRIPT,    <= i have used  Glup-js to =>,  Compile and convert SCSS files into a CSS file and add prefixes to fit the old browsers and reduce their size, Compile, convert Pug-js files into pretty HTML file , Reduce JS file size",
+            "link1": "#",
+            "link2": "https://github.com/eidsid/Protfolio"
+        }
+    ]
+}
