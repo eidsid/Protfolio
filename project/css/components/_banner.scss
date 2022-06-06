@@ -53,53 +53,69 @@
             animation: 1s linear partsanim;
         }
         p {
-            &:nth-child(1) {
+            &.i1 {
                 left: 10%;
+                top: 10%;
+            }
+            &.i2 {
+                left: 20%;
                 top: 20%;
             }
-            &:nth-child(2) {
-                left: 15%;
+            &.i3 {
+                left: 30%;
+                top: 30%;
+            }
+            &.i4 {
+                left: 400%;
                 top: 40%;
             }
-            &:nth-child(3) {
-                left: 40%;
-                top: 20%;
+            &.i5 {
+                left: 50%;
+                top: 50%;
             }
-            &:nth-child(4) {
-                left: 20%;
+            &.i6 {
+                left: 60%;
+                top: 60%;
+            }
+            &.i7 {
+                left: 70%;
                 top: 70%;
             }
-            &:nth-child(5) {
-                left: 90%;
-                top: 60%;
-            }
-            &:nth-child(6) {
-                left: 50%;
-                top: 60%;
-            }
-            &:nth-child(7) {
-                left: 75%;
-                top: 85%;
-            }
-            &:nth-child(8) {
-                right: 5%;
-                top: 5%;
-            }
-            &:nth-child(9) {
-                right: 15%;
-                top: 20%;
-            }
-            &:nth-child(10) {
-                right: 50%;
+            &.i8 {
+                left: 80%;
                 top: 80%;
             }
-            &:nth-child(11) {
-                right: 50%;
-                top: 5%;
+            &.i9 {
+                left: 90%;
+                top: 90%;
             }
-            &:nth-child(12) {
-                left: 5%;
-                bottom: 5%;
+            &.i10 {
+                left: 100%;
+                top: 100%;
+            }
+            &.i11 {
+                left: 30%;
+                bottom: 30%;
+            }
+            &.i12 {
+                left: 20%;
+                bottom: 20%;
+            }
+            &.i13 {
+                left: 10%;
+                bottom: 10%;
+            }
+            &.i14 {
+                right: 30%;
+                top: 30%;
+            }
+            &.i15 {
+                right: 20%;
+                top: 20%;
+            }
+            &.i16 {
+                right: 10%;
+                top: 10%;
             }
         }
     }
@@ -189,7 +205,7 @@
     }
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
     .banner {
         font-size: 0.85rem;
     }
