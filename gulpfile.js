@@ -1,5 +1,3 @@
-const { task } = require("gulp");
-
 const gulp = require("gulp"),
   pug = require("gulp-pug"),
   concat = require("gulp-concat"),
