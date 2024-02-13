@@ -5,7 +5,6 @@ const gulp = require("gulp"),
   prfix = require("gulp-autoprefixer"),
   minjs = require("gulp-terser"),
   sass = require("gulp-sass")(require("sass"));
-
 //html task
 gulp.task("html", () => {
   return gulp
@@ -40,9 +39,10 @@ gulp.task("css", () => {
 
 // js task
 gulp.task("js", () => {
-  gulp
+  return gulp
     .src("./project/js/*.js")
-    .pipe(minjs({}, minjs.minify))
+    .pipe(concat("main.js")) // Concatenate all JS files into a single file named all.js
+    .pipe(minjs()) // Minify the concatenated JS file
     .pipe(gulp.dest("./dist/js"));
 });
 

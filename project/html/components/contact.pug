@@ -1,10 +1,10 @@
 section#contact 
         h1 Get in Touch
         p Let's talk about everything!
-        form(action='mailto:eidsayed2022web@gmail.com' method='POST' ,autocomplete="on" enctype="text/plain" name='EmailForm') 
+        form( name='EmailForm',id="contactForm" )  
             .inputs 
-              input(type="text",  name="Name" ,placeholder="Your Name", autocomplete="on")
-              input(type="email", name="E-Mail Address" ,placeholder="Email adress" ,autocomplete="on")
-            input(type="text", name="Subject", placeholder="Subject",autocomplete="on")
-            textarea(name="Message", cols="30", rows="10" placeholder="Message",autocomplete="on") 
-            input(type="submit", value="Submit")
+              input(type="text",  name="Name", id ="name",placeholder="Your Name", )
+              input(type="email", name="E-Mail Address" ,id ="email",placeholder="Email adress" ,)
+            input(type="text", name="Subject",id="subject", placeholder="Subject",)
+            textarea(name="Message", id="message",cols="30", rows="10" placeholder="Message",) 
+            input(type="submit", value="Submit" class="submit" )
