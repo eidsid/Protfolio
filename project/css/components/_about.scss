@@ -33,7 +33,8 @@ section#about {
   h2 {
     margin-bottom: 5rem;
   }
-  .skills ul.list {
+  .skills ul.list,
+  .softSkills ul {
     @include flex(row, center, center);
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -63,13 +64,6 @@ section#about {
     p {
       transform: translateY(0%);
       opacity: 1;
-    }
-  }
-  .softSkills {
-    display: flex;
-    justify-content: center;
-    ul li {
-      list-style: decimal;
     }
   }
 }
