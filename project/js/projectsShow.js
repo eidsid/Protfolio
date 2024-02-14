@@ -71,8 +71,7 @@ const ShowProjects = () => {
       img_url: "./imgs/blog.png",
       data_set: "blog",
       title: "Blog Application using Next.js",
-      more_info:
-        "Developed a blog application using Next.js and Firebase for deployment.",
+      more_info: "Developed a blog application using Next.js.",
       language: "Next.js, NextAuth.js, MongoDB, SCSS",
       link1: "https://github.com/eidsid/blog",
       link2: "https://blog-eidsid.vercel.app/",
