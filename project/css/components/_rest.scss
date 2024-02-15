@@ -1,38 +1,71 @@
 html,
 body {
-    scroll-behavior: smooth;
-    font-family: sans-serif;
-    overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 *,
 *::after,
 *::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style-type: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 a {
-    color: white
+  color: white;
 }
 
 .projects_info,
 .content {
-    width: calc( 100% - 300px);
-    margin-left: 300px;
+  width: calc(100% - 300px);
+  margin-left: 300px;
 }
 
 @include medi {
-    .projects_info,
-    .content {
-        width: calc( 100% - 60px);
-        margin-left: 60px;
-    }
+  .projects_info,
+  .content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
 }
 
 body {
-    background-color: $sidebare_bgcolor;
+  background-color: $sidebare_bgcolor;
+
+  border-radius: 10rem;
+}
+
+/* For Webkit based browsers (e.g. Chrome, Safari) */
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  border: 1px solid black; /* Border around the scrollbar */
+  border-radius: 100vw; /* Rounded border radius to make it look like a button */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: rgb(82, 82, 82); /* Background color of the scrollbar track */
+  border-radius: 100vw; /* Rounded border radius to match the scrollbar */
+  margin-block: 0.5em; /* Margin to give spacing between scrollbar and content */
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #ebe5e5; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+/* Hover effect on Scrollbar Thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b8b8b8; /* Color of the scrollbar thumb on hover */
+}
+
+/* Scrollbar Button */
+::-webkit-scrollbar-button {
+  display: none; /* Hide scrollbar buttons */
 }

@@ -1,135 +1,172 @@
 .projects_info {
-    position: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  max-width: 100%;
+  @include flex(row, center, center);
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  transform: scale(0.9);
+  overflow: hidden;
+  i {
+    position: absolute;
     top: 0;
-    left: 0;
-    height: 100%;
-    max-width: 100%;
-    @include flex(row, center, center);
-    background-color: black;
-    color: white;
+    right: 0;
+    font-size: 2rem;
     padding: 2rem;
-    transform: scale(0.9);
-    i {
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 2rem;
-        padding: 2rem;
-        @include transation(0.3s);
-        &:hover {
+    @include transation(0.3s);
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+  .content {
+    height: 100%;
+    > *,
+    > * > * {
+      margin: 1rem;
+    }
+    img {
+      float: right;
+      min-width: 300px;
+      max-width: 100%;
+      max-height: 400px;
+      min-height: 300px;
+      margin: 2rem;
+      opacity: 0.7;
+      z-index: -1;
+    }
+    h1 {
+      width: fit-content;
+      color: rgb(108, 160, 5);
+      margin: 1rem auto;
+      font-size: 20px;
+    }
+    p {
+      height: 200px;
+      font-size: 15px;
+      overflow-y: scroll;
+      padding: 0.5rem;
+      text-overflow: ellipsis;
+      &::-webkit-scrollbar {
+        width: 10px; /* Width of the scrollbar */
+        border-radius: 100vw; /* Rounded border radius to make it look like a button */
+        border: none;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgb(
+          65,
+          65,
+          65
+        ); /* Background color of the scrollbar track */
+        border-radius: 100vw; /* Rounded border radius to match the scrollbar */
+        margin-block: 0.5em; /* Margin to give spacing between scrollbar and content */
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #ffffff; /* Color of the scrollbar thumb */
+        border-radius: 5px; /* Rounded corners for the thumb */
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #b1aeae; /* Color of the scrollbar thumb on hover */
+      }
+    }
+    .text-container {
+      position: absolute;
+      color: rgb(255, 255, 255);
+      top: 15%;
+      left: 0;
+      width: 80%;
+      height: 70%;
+      padding: 1rem;
+      background-image: linear-gradient(
+        to right,
+        rgb(0, 0, 0),
+        rgba(26, 25, 25, 0.884),
+        rgba(235, 223, 223, 0.171)
+      );
+      .tools {
+        font-size: medium;
+      }
+      .links {
+        @include flex(row, center, center);
+        gap: 1rem;
+        a {
+          background: yellowgreen;
+          padding: 0.5rem;
+
+          color: rgb(28, 39, 6);
+          font-weight: bolder;
+          font-size: 120%;
+          @include transation(0.4s);
+          &:hover {
+            background: rgba(248, 245, 245, 0.651);
+            color: black;
             transform: scale(1.2);
-            cursor: pointer;
+            border-radius: 13px;
+          }
         }
+      }
     }
-    .content {
-        height: 100%;
-        >*,
-        >*>* {
-            margin: 1rem;
-        }
-        img {
-            float: right;
-            min-width: 300px;
-            max-width: 100%;
-            max-height: 400px;
-            min-height: 300px;
-            margin: 2rem;
-            opacity: 0.7;
-            z-index: -1;
-        }
-        h1 {
-            width: fit-content;
-            margin: 2rem auto;
-            color: rgb(108, 160, 5);
-            margin: 1rem auto;
-        }
-        p {
-            font-weight: 900;
-            font-size: 120%;
-        }
-        .text-container {
-            position: absolute;
-            color: rgb(255, 255, 255);
-            top: 15%;
-            left: 0;
-            width: 80%;
-            height: 70%;
-            padding: 1rem;
-            background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(26, 25, 25, 0.884), rgba(235, 223, 223, 0.171));
-            .links {
-                @include flex(row, center, center);
-                a {
-                    background: yellowgreen;
-                    padding: 2rem;
-                    margin: 2rem;
-                    color: rgb(28, 39, 6);
-                    font-weight: bolder;
-                    font-size: 120%;
-                    @include transation(0.4s);
-                    &:hover {
-                        background: rgba(248, 245, 245, 0.651);
-                        color: black;
-                        transform: scale(1.2);
-                        border-radius: 13px;
-                    }
-                }
-            }
-        }
-    }
-    display: none;
-    animation: infoanim 0.5s ease-in-out;
-    &.active {
-        display: block;
-    }
+  }
+  display: none;
+  animation: infoanim 0.5s ease-in-out;
+  &.active {
+    display: block;
+  }
 }
 
-@media (max-width:550px) {
-    .close {
-        z-index: 1000;
+@media (max-width: 550px) {
+  .close {
+    z-index: 1000;
+  }
+  .projects_info {
+    img {
+      display: none;
     }
-    .projects_info {
-        img {
-            display: none;
+    height: fit-content !important;
+    overflow-y: scroll;
+    height: 90vh !important;
+    padding: 0;
+    z-index: 100;
+    .content {
+      padding-left: 0.7rem !important;
+      .text-container {
+        background: none;
+        overflow-x: hidden;
+        position: absolute;
+        color: rgb(255, 255, 255);
+        top: 5%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .links {
+          a {
+            padding: 0.5rem;
+            margin: 0.5rem;
+          }
         }
-        height: fit-content !important;
-        overflow-y: scroll;
-        height: 90vh !important;
-        padding: 0;
-        z-index: 100;
-        .content {
-            padding-left: 0.7rem !important;
-            .text-container {
-                background: none;
-                overflow-x: hidden;
-                position: absolute;
-                color: rgb(255, 255, 255);
-                top: 5%;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                .links {
-                    a {
-                        padding: 0.5rem;
-                        margin: 0.5rem;
-                    }
-                }
-            }
-            width: 100%;
-            * {
-                font-weight: normal !important;
-            }
-        }
-        h1 {
-            font-size: 150%;
-        }
+      }
+      width: 100%;
+      * {
+        font-weight: normal !important;
+      }
     }
+    h1 {
+      font-size: 150%;
+    }
+  }
 }
 
 @keyframes infoanim {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(0.8);
-    }
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.8);
+  }
 }
