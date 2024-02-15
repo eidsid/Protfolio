@@ -17,8 +17,9 @@ async function sendMail(name, email, subject, message) {
       .then(alert("your email sent success"));
   } catch (error) {}
 }
+const formSelector = document.getElementById("contactForm");
 
-document.getElementById("contactForm").addEventListener("submit", (e) => {
+formSelector.addEventListener("submit", (e) => {
   e.preventDefault(); // Prevent form submission
 
   const name = document.getElementById("name").value;
@@ -31,6 +32,7 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
     alert("Please enter a valid email address.");
   } else {
     sendMail(name, email, Subject, message);
+    formSelector.reset();
   }
 
   function validateEmail(email) {
